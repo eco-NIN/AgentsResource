@@ -40,11 +40,18 @@ import Home from './pages/Home'
 import PaperToVideo from './pages/PaperToVideo'
 import PaperToPPT from './pages/PaperToPPT'
 import Enterprise from './pages/Enterprise'
+import AddAgent from './pages/AddAgent'
+import Login from './pages/Login'
+import Docs from './pages/Docs'
+import Contact from './pages/Contact'
+import UserDashboard from './pages/UserDashboard'
 import MainLayout from './layout/MainLayout'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={
           <MainLayout>
@@ -64,6 +71,27 @@ export default function App() {
         <Route path="/enterprise" element={
           <MainLayout>
             <Enterprise />
+          </MainLayout>
+        } />
+        <Route path="/docs" element={
+          <MainLayout>
+            <Docs />
+          </MainLayout>
+        } />
+        <Route path="/contact" element={
+          <MainLayout>
+            <Contact />
+          </MainLayout>
+        } />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={
+          <MainLayout>
+            <UserDashboard />
+          </MainLayout>
+        } />
+        <Route path="/add-agent" element={
+          <MainLayout>
+            <AddAgent />
           </MainLayout>
         } />
       </Routes>

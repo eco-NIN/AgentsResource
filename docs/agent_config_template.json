@@ -1,0 +1,52 @@
+{
+  "agent_name": "论文生成视频",
+  "api_endpoint": "https://yourdomain.com/api/v1/paper2video",
+  "method": "POST",
+  "description": "将上传的 PDF 论文自动转换为配音讲解的视频。",
+  "input_schema": [
+    {
+      "key": "pdf_files[]",
+      "label": "上传论文 PDF",
+      "type": "file",
+      "required": true,
+      "multiple": true
+    },
+    {
+      "key": "mode",
+      "label": "生成模式",
+      "type": "select",
+      "required": true,
+      "options": ["single", "batch"]
+    },
+    {
+      "key": "voice_type",
+      "label": "配音风格",
+      "type": "select",
+      "required": false,
+      "options": ["female", "male"]
+    },
+    {
+      "key": "video_duration",
+      "label": "视频长度",
+      "type": "select",
+      "required": false,
+      "options": ["short", "medium", "long"]
+    },
+    {
+      "key": "background_choice",
+      "label": "背景选择",
+      "type": "select",
+      "required": false,
+      "options": ["default", "abstract", "solid"]
+    }
+  ],
+  "options_payload_wrapper": "options",
+  "output_type": "video",
+  "output_label": "生成视频",
+  "status_polling": {
+    "enabled": true,
+    "status_field": "status",
+    "result_field": "result.download_url",
+    "polling_url_field": "status_url"
+  }
+}

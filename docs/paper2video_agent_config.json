@@ -1,0 +1,72 @@
+{
+  "agent_name": "论文一键生成视频",
+  "api_endpoint": "https://b56465a80c33.ngrok-free.app/api/v1/paper2video",
+  "method": "POST",
+  "description": "上传一篇或多篇PDF格式的学术论文，AI将自动提取核心内容、生成讲解脚本、匹配动画场景并配音，最终合成为一个完整的讲解视频。",
+  "input_schema": [
+    {
+      "key": "pdf_files[]",
+      "label": "上传论文 (可多选)",
+      "type": "file",
+      "required": true,
+      "multiple": true,
+      "accept": ".pdf"
+    },
+    {
+      "key": "mode",
+      "label": "处理模式",
+      "type": "select",
+      "required": true,
+      "default": "single",
+      "options": [
+        { "label": "单文件处理 (为每个PDF生成独立视频)", "value": "single" },
+        { "label": "批量处理 (将所有PDF合并处理)", "value": "batch" }
+      ],
+      "description": "“单文件”为每个上传的PDF生成一个视频；“批量”将所有PDF视为一个整体项目进行处理。"
+    },
+    {
+      "key": "video_duration",
+      "label": "期望视频长度",
+      "type": "select",
+      "required": false,
+      "default": "medium",
+      "options": [
+        { "label": "较短", "value": "short" },
+        { "label": "中等", "value": "medium" },
+        { "label": "较长", "value": "long" }
+      ]
+    },
+    {
+      "key": "voice_type",
+      "label": "选择配音",
+      "type": "select",
+      "required": false,
+      "default": "female",
+      "options": [
+        { "label": "标准女声", "value": "female" },
+        { "label": "标准男声", "value": "male" }
+      ]
+    },
+    {
+      "key": "background_choice",
+      "label": "视频背景风格",
+      "type": "select",
+      "required": false,
+      "default": "default",
+      "options": [
+        { "label": "默认背景", "value": "default" },
+        { "label": "抽象科技风", "value": "abstract" },
+        { "label": "纯色背景", "value": "solid" }
+      ]
+    }
+  ],
+  "options_payload_wrapper": "options",
+  "output_type": "video",
+  "output_label": "生成的视频",
+  "status_polling": {
+    "enabled": true,
+    "status_field": "status",
+    "result_field": "result.download_url",
+    "polling_url_field": "status_url"
+  }
+}

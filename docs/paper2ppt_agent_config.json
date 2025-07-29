@@ -1,0 +1,37 @@
+{
+  "agent_name": "论文一键生成PPT",
+  "api_endpoint": "https://b56465a80c33.ngrok-free.app/api/v1/paper2ppt",
+  "method": "POST",
+  "description": "上传一篇或多篇PDF格式的学术论文，AI将自动分析论文结构、提炼关键图表和要点，并生成一份结构清晰、内容完整的演示文稿 (PPT)。",
+  "input_schema": [
+    {
+      "key": "pdf_files[]",
+      "label": "上传论文 (可多选)",
+      "type": "file",
+      "required": true,
+      "multiple": true,
+      "accept": ".pdf"
+    },
+    {
+      "key": "mode",
+      "label": "处理模式",
+      "type": "select",
+      "required": true,
+      "default": "single",
+      "options": [
+        { "label": "单文件处理 (为每个PDF生成独立PPT)", "value": "single" },
+        { "label": "批量处理 (将所有PDF合并处理)", "value": "batch" }
+      ],
+      "description": "“单文件”为每个上传的PDF生成一份PPT；“批量”将所有PDF视为一个整体项目进行处理。"
+    }
+  ],
+  "options_payload_wrapper": "options",
+  "output_type": "ppt",
+  "output_label": "生成的PPT",
+  "status_polling": {
+    "enabled": true,
+    "status_field": "status",
+    "result_field": "result.download_url",
+    "polling_url_field": "status_url"
+  }
+}

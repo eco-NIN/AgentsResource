@@ -5,76 +5,79 @@ import Card from '../components/Card';
 export default function Home() {
   const agentCards = [
     {
-      title: '智能体探索舱',
-      description: '深入智能体宇宙，探索前沿AI技术在学术研究中的无限可能',
-      provider: 'SJTU AI Lab',
-      rating: '4.8',
-      icon: '🚀',
+      title: '教学视频制作团队',
+      description: '将学术论文智能转换为精美的视频内容，让研究成果生动展现',
+      provider: '上海交通大学人工智能学院',
+      rating: '5.0',
+      icon: '/imgs/1-D-1.png',
       to: '/paper-to-video',
-      launchDate: '2024-04'
+      launchDate: '2025-07'
     },
     {
-      title: '星际研究站',
-      description: '智能分析学术成果，将研究转化为精美的星际演示',
-      provider: '交大计算机学院',
-      rating: '4.5',
-      icon: '🛸',
+      title: '教学文稿制作团队',
+      description: '自动将论文内容转化为专业的演示幻灯片，助力教学',
+      provider: '上海交通大学人工智能学院',
+      rating: '5.0',
+      icon: '/imgs/2-D-1.png',
       to: '/paper-to-ppt',
-      launchDate: '2024-03'
+      launchDate: '2025-07'
     },
     {
-      title: '星球联盟港',
-      description: '为机构提供专属的智能体星球解决方案，共建AI生态',
-      provider: 'SJTU Tech',
-      rating: '4.9',
-      icon: '🏛️',
+      title: '科技论文讲解者',
+      description: '智能生成论文讲解内容，提供详细的学术解读和分析',
+      provider: '上海交通大学人工智能学院',
+      rating: '5.0',
+      icon: '/imgs/3-D-1.png',
       to: '/enterprise',
-      launchDate: '2023-12'
+      launchDate: '2025-07'
     },
     {
-      title: '星云数据中心',
-      description: '智能处理星际数据，提供宇宙级洞察和分析报告',
-      provider: '交大数据科学中心',
-      rating: '4.7',
-      icon: '🌌',
-      to: '/',
-      launchDate: '2024-02'
+      title: '添加智能体',
+      description: '上传配置文件，创建属于您的专属智能体',
+      provider: '自定义创建',
+      rating: 'NEW',
+      icon: '➕',
+      to: '/login',
+      launchDate: '立即开始'
+    }
+  ];
+
+  const medicalCards = [
+    {
+      title: '医学影像分析师',
+      description: '智能分析医学影像，辅助医生进行精准诊断和病情评估',
+      provider: '上海交通大学人工智能学院',
+      rating: '5.0',
+      icon: '/imgs/4-D-1.png',
+      to: '/medical-imaging',
+      launchDate: '2025-07'
     },
     {
-      title: '知识引力场',
-      description: '智能汇聚和组织学术资源，创建个性化知识体系',
-      provider: '交大图书馆',
-      rating: '4.6',
-      icon: '🧲',
-      to: '/',
-      launchDate: '2024-01'
+      title: '健康数据分析师',
+      description: '分析个人健康数据，提供个性化健康建议和风险预警',
+      provider: '上海交通大学人工智能学院',
+      rating: '5.0',
+      icon: '/imgs/5-U-1.png',
+      to: '/health-analysis',
+      launchDate: '2025-07'
     },
     {
-      title: '量子思维导图',
-      description: '突破传统思维限制，辅助科研人员创新思考',
-      provider: '量子计算研究所',
-      rating: '4.8',
-      icon: '⚛️',
-      to: '/',
-      launchDate: '2024-05'
+      title: '药物研发助手',
+      description: '加速药物发现过程，预测药物效果和副作用',
+      provider: '上海交通大学人工智能学院',
+      rating: '5.0',
+      icon: '/imgs/6-U-1.png',
+      to: '/drug-development',
+      launchDate: '2025-07'
     },
     {
-      title: '星际翻译官',
-      description: '精准翻译专业学术文献，支持多语言实时交流',
-      provider: '语言智能实验室',
-      rating: '4.7',
-      icon: '🔤',
-      to: '/',
-      launchDate: '2023-11'
-    },
-    {
-      title: '科研助航舱',
-      description: '全流程科研辅助系统，从选题到发表一站式支持',
-      provider: '科研创新中心',
-      rating: '4.9',
-      icon: '🔬',
-      to: '/',
-      launchDate: '2024-06'
+      title: '添加智能体',
+      description: '上传配置文件，创建属于您的专属智能体',
+      provider: '自定义创建',
+      rating: 'NEW',
+      icon: '➕',
+      to: '/login',
+      launchDate: '立即开始'
     }
   ];
 
@@ -86,15 +89,15 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fadeInUp">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
-                🪐 上海交通大学
+              <h1 className="text-5xl md:text-6xl lg:text-7xl cosmic-title mb-8 text-white leading-tight tracking-tighter">
+                 上海交通大学
                 <span className="block text-gradient">智能体星球</span>
               </h1>
             </div>
             <div className="animate-fadeInUp animate-delay-200">
-              <p className="text-xl md:text-2xl mb-12 text-slate-200 leading-relaxed">
-                探索AI智能体的无限宇宙，在交大智能体星球上<br/>
-                <span className="text-lg">🌟 发现创新、🚀 推动科技、🔬 引领未来</span>
+              <p className="text-xl md:text-2xl mb-12 text-slate-200 leading-relaxed cosmic-subtitle">
+              在上海交通大学智能体星球上，探索AI智能体的无限宇宙<br/>
+                <span className="text-lg">🌟 发现创新  🚀 推动科技  🔬 引领未来</span>
               </p>
             </div>
           </div>
@@ -105,18 +108,70 @@ export default function Home() {
       <section className="py-20 relative">
         <div className="container-custom">
           <div className="text-center mb-16 animate-fadeInUp">
-            <h2 className="text-4xl font-bold mb-6 text-gradient">星球智能体服务站</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              探索各种专业智能体生命形态，为您的学术研究和创新项目提供星际级支持
+            <h2 className="text-4xl cosmic-title mb-6 text-gradient tracking-tight">星球智能体服务站</h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed cosmic-subtitle">
+              探索各种专业智能体生命形态，为您的学术研究和创新项目提供支持
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {agentCards.map((card) => (
-              <div key={card.title} className="animate-fadeInUp animate-delay-100 h-full">
-                <Card {...card} />
-              </div>
-            ))}
+          {/* 教育科研类别 */}
+          <div className="mb-16">
+            <div className="mb-8 animate-fadeInUp">
+              <h3 className="text-2xl cosmic-title text-slate-100 mb-2">教育科研</h3>
+              <div className="w-16 h-1 bg-[--color-primary] rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {agentCards.map((card) => (
+                <div key={card.title} className="animate-fadeInUp animate-delay-100 h-full">
+                  {card.title === '添加智能体' ? (
+                    <Link 
+                      to={card.to} 
+                      className="card flex flex-col items-center justify-center p-4 h-full w-full transition-all duration-300 hover:-translate-y-1 hover:scale-105 min-h-[180px]"
+                    >
+                      <div className="text-4xl mb-2 text-[--color-primary] hover:text-[--color-primary-light] transition-colors duration-300">
+                        ➕
+                      </div>
+                      <h3 className="cosmic-title text-xl text-slate-100 text-center">
+                        添加智能体
+                      </h3>
+                    </Link>
+                  ) : (
+                    <Card {...card} />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 医疗健康类别 */}
+          <div className="mb-16">
+            <div className="mb-8 animate-fadeInUp">
+              <h3 className="text-2xl cosmic-title text-slate-100 mb-2">医疗健康</h3>
+              <div className="w-16 h-1 bg-[--color-secondary] rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {medicalCards.map((card) => (
+                <div key={card.title} className="animate-fadeInUp animate-delay-200 h-full">
+                  {card.title === '添加智能体' ? (
+                    <Link 
+                      to={card.to} 
+                      className="card flex flex-col items-center justify-center p-4 h-full w-full transition-all duration-300 hover:-translate-y-1 hover:scale-105 min-h-[180px]"
+                    >
+                      <div className="text-4xl mb-2 text-[--color-primary] hover:text-[--color-primary-light] transition-colors duration-300">
+                        ➕
+                      </div>
+                      <h3 className="cosmic-title text-xl text-slate-100 text-center">
+                        添加智能体
+                      </h3>
+                    </Link>
+                  ) : (
+                    <Card {...card} />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
